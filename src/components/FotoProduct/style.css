@@ -1,0 +1,168 @@
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+*{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.images{
+    width: 40%;
+}
+
+.images img{
+    border-radius: 16px;
+    width: 100%;
+}
+
+.buy {
+    margin-left: 20px;
+    width: 30%;
+}
+
+.buy1, .buy2{
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px #ededed;
+    border: #ededed solid 3px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.buy h2{
+    font-size: medium;
+    font-weight: bolder;
+}
+
+.buy h5{
+    font-size: medium;
+    font-weight: 400;
+}
+
+.buy h4{
+    font-size: medium;
+    font-weight: 400;
+}
+
+.terbitkan{
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 16px;
+    font-size: 15px;
+    width: 100%;
+    background: #7227B5;
+    text-decoration: none;
+    border: #7227B5 3px solid;
+}
+
+.edit{
+    color: #7227B5;
+    padding: 5px 15px;
+    border: none;
+    margin-top: 10px;
+    border-radius: 16px;
+    font-size: 15px;
+    width: 100%;
+    background: white;
+    border: #7227B5 3px solid;
+    text-decoration: none;
+}
+
+.containerr{
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+}
+
+.carousell {
+    display: none;
+}
+
+@media (max-width: 550px){
+    .containerr{
+        display: inline;
+    }
+
+    .images, .images img{
+        position: relative;
+        margin-top: -12px;
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .buy {
+        margin: auto;
+        margin-top: -30px;
+        position: relative;
+        z-index: 10;
+        padding: 10px;
+        width: 80%;
+    }
+
+    .buy1,.buy2{
+        box-shadow: 0 0 10px #0000000a;
+    }
+
+    .buy h2{
+        font-size: 16px;
+        font-weight: bolder;
+    }
+    
+    .buy h5{
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .buy h4{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .buy h6{
+        font-size: 16px;
+        font-weight: 400;
+    }
+
+    .terbitkan{
+    background-position: 94% 50%;
+    background-repeat: no-repeat;
+    padding: 5px 20px 5px 15px;
+    position: fixed;
+    bottom: 10px;
+    left: 10%;
+    width: 80%;
+    border-radius: 10px;
+    }
+
+    .edit{
+        display: none;
+    }
+    .carousell{
+        display: block;
+        position: absolute;
+        width: 20%;
+        top: 90%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}
+.deskripsi {
+    margin-top: 20px;
+    background-color: #ffffff;
+    padding: 10px;
+    box-shadow: 0 0 10px #ededed;
+    border: #ededed solid 3px;
+    border-radius: 10px;
+    width: 100%;
+}

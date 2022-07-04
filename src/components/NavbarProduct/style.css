@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+*{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	box-sizing:border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.navi{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px;
+    box-shadow: 0 0 10px #0000003b;
+    margin-bottom: 30px;
+}
+
+.searchbarr{
+    display: flex;
+    padding: 15px;
+    margin-left: 40px;
+}
+
+.searchbarr .logo{
+    margin-right: 25px;
+}
+
+.searchbarr input{
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    font-size: 16px;
+    background-color: #dedede;
+    border-radius: 10px 0px 0px 10px;
+    padding: 5px 0px 5px 15px;
+}
+
+.searchbarr button{
+    width: fit-content;
+    box-sizing: border-box;
+    border: none;
+    font-size: 16px;
+    background-color: #dedede;
+    border-radius: 0px 10px 10px 0px;
+    padding: 5px 15px;
+    
+}
+
+/* .navbar{
+    padding: 20px 10px;
+    display: block;
+} */
+
+ul li{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    
+}
+
+navi{
+    float: right;
+    font-weight: bold;
+    padding: 0.5rem;
+    padding: 15px;
+    margin-right: 40px;
+}
+
+.back{
+    display: none;
+}
+/* nav form{
+    text-decoration: none;
+    margin: 10px;
+    padding: 6px;
+    color: black;
+    border-radius: 10px;
+} */
+
+navi img{
+    color: rgba(76, 94, 140, 0.52);;
+    text-decoration: none;
+    margin: 5px;
+    padding: 5px 10px;
+    border-radius: 7px;
+    width: 40px;
+}
+@media (max-width: 650px){
+    .searchbar .logo{
+        display: none;
+    }
+}
+
+@media (max-width: 550px){
+    .navi {
+        display: none;
+    }
+
+    .container{
+        display: inline;
+    }
+    .back{
+        display: block;
+        position: fixed;
+        top: 5%;
+        left: 7%;
+        z-index: 2;
+    }
+}
