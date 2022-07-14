@@ -1,0 +1,84 @@
+
+body {
+   font-family: "Poppins";
+   font-size: 14px;
+   color: #333;
+   background: #fff;
+}
+
+nav {
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.035), 0px 0px 80px rgba(0, 0, 0, 0.07);
+}
+
+.bi-camera {
+   width: 550px;
+   height: 400px;
+}
+
+.fa-solid-fa-camera {
+   width: 550px;
+   height: 400px;
+}
+
+.title {
+   left: 40%;
+}
+
+.cardd {
+   border-color: #be99df;
+   background: #f5f3f7;
+   margin: 0;
+   width: 5rem;
+}
+
+.btn-primary {
+   border-color: #7227b5;
+   background: #b27edf;
+}
+
+.btnnn {
+   border-radius: 10px;
+   background: #7227b5;
+   width: 260px;
+   height: 40px;
+   border-color: #7227b5;
+}
+
+.btn4 {
+   border-radius: 10px;
+   background: #7227b5;
+   width: 260px;
+   height: 40px;
+   border-color: #7227b5;
+   background: #faf6fa;
+   color: black;
+}
+
+.btn-primary:hover {
+   background: #432875;
+   border-color: #432875;
+}
+
+.btn-primary-non {
+   background: #e1d2ef;
+   border-color: #e1d2ef;
+}
+
+.btn-primary-non:hover {
+   background: #7227b5;
+   border-color: #7227b5;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 768px) {
+   .container .deskripsi {
+      width: 50%;
+   }
+}
+
+@media screen and (max-width: 350px) {
+   .container .deskripsi {
+      width: 30%;
+   }
+}

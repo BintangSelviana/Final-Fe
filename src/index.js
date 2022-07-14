@@ -11,6 +11,8 @@ import HalamanProduct from "./pages/HalamanProduct";
 import HalamanProduct2 from "./pages/HalamanProduct2";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HalamanDaftarJual from "./pages/HalamanDaftarJual";
+import HalamanInfoProduct from "./pages/HalamanInfoProduct";
+import HalamanInfoProfil from "./pages/HalamanInfoProfil";
 import HomeLogin from "./pages/HomeLogin";
 import {Protected} from './components';
 
@@ -38,6 +40,8 @@ root.render(
         <Route path="/halamanproduct" element={<HalamanProduct />} />
         <Route path="/halamanproduct2" element={<HalamanProduct2 />} />
         <Route path="/halamandaftarjual" element={<HalamanDaftarJual />} />
+        <Route path="/halamaninfo" element={<HalamanInfoProduct />} />
+        <Route path="/halamaninfoprofil" element={<HalamanInfoProfil />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
