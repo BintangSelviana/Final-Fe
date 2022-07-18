@@ -6,19 +6,23 @@ import App from "./App";
 import "aos/dist/aos.css";
 import Register from "./components/Register";
 import reportWebVitals from "./reportWebVitals";
-import {Login} from "./components";
+import Login from "./components/Login";
 import HalamanProduct from "./pages/HalamanProduct";
 import HalamanProduct2 from "./pages/HalamanProduct2";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from 'react-redux';
 import HalamanDaftarJual from "./pages/HalamanDaftarJual";
 import HalamanInfoProduct from "./pages/HalamanInfoProduct";
 import HalamanInfoProfil from "./pages/HalamanInfoProfil";
 import HomeLogin from "./pages/HomeLogin";
-import {Protected} from './components';
+import store from './store/store';
+import Protected from './components/Protected';
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
+     <Provider store={store}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
@@ -44,6 +48,7 @@ root.render(
         <Route path="/halamaninfoprofil" element={<HalamanInfoProfil />} />
       </Routes>
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 

@@ -21,7 +21,7 @@ body{
 
 .images img{
     border-radius: 16px;
-    width: 100%;
+    width: 90%;
 }
 
 .buy {
@@ -85,10 +85,6 @@ body{
     justify-content: center;
 }
 
-.carousell {
-    display: none;
-}
-
 @media (max-width: 550px){
     .containerr{
         display: inline;
@@ -146,15 +142,6 @@ body{
 
     .edit{
         display: none;
-    }
-    .carousell{
-        display: block;
-        position: absolute;
-        width: 20%;
-        top: 90%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
     }
 }
 .deskripsi {

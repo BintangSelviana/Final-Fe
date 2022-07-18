@@ -85,10 +85,6 @@ body{
     justify-content: center;
 }
 
-.carousell {
-    display: none;
-}
-
 @media (max-width: 550px){
     .containerr{
         display: inline;
@@ -143,16 +139,7 @@ body{
     .edit{
         display: none;
     }
-    .carousell{
-        display: block;
-        position: absolute;
-        width: 20%;
-        top: 90%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    }
-}
+
 .deskripsi {
     margin-top: 20px;
     background-color: #ffffff;
@@ -161,4 +148,5 @@ body{
     border: #ededed solid 3px;
     border-radius: 10px;
     width: 100%;
+}
 }

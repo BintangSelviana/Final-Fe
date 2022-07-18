@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #333;
+    background: #fff;
+}
+
+/* .topbar{
+    display: none;
+} */
+
+nav {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.035),
+                0px 0px 80px rgba(0, 0, 0, 0.07); 
+}
+
+.ms-n5 {
+    margin-left: -40px;
+}
+
+.search-input, .search-input:focus {
+    border-color: transparent !important;
+    background: #EEEEEE;
+}
+
+.search-icon {
+    border-color: transparent;
+    background: #EEEEEE;
+}
+
+.btn-primary{
+    background: #7227B5;
+    border-color: #7227B5;
+}
+
+.btn-primary:hover{
+    background: #432875;
+    border-color: #432875;
+}
+
+.btn-primary-non{
+    background: #e1d2ef;
+    border-color: #e1d2ef;
+}
+
+.btn-primary-non:hover{
+    background: #7227B5;
+    border-color: #7227B5;
+}
+
+.btn-float {
+    width: 100px;
+    position: fixed;
+    bottom: 40px;
+    font-size: small;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.73);
+    z-index: 100;
+}
+/* ================================ */
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: rgb(255, 255, 255); /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+
+  .btn-float{
+    z-index: 9;
+  }
+    
+    /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #000000;
+    display: block;
+    transition: 0.3s;
+    text-shadow: 0 0 15px rgba(172, 249, 255, 0.75);
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .snd{
+    position: absolute;
+    top: 22px;
+    left: 25px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+
+  .btn{
+    margin-bottom: 100px;
+  }
+
+  .navbar>.container{
+    justify-content: space-evenly;
+  }
+
+  @media (max-width: 1000px){
+    .d-flex{
+        width: 80%;
+    }
+  }
+
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    }
+    
+    .open{
+      color: whitesmoke;
+      padding: 10px ;
+      margin-top: 0px;
+      font-size: medium;
+      font-weight: bolder;
+      text-transform: uppercase;
+      text-shadow: 0 0 15px rgb(172, 249, 255);
+    
+    
+    }
+
+    .navback a{
+      color: whitesmoke;
+      padding: 10px ;
+      margin-top: 0px;
+      margin-left: 2rem;
+      font-size: medium;
+      font-weight: bolder;
+      text-transform: uppercase;
+      text-shadow: 0 0 15px rgb(172, 249, 255);
+      text-decoration: none;
+    
+    }
+
+    .masuk {
+        width: 100%;
+    }
+
+    .d-grid{
+        margin: 0px 50px;
+    }
+
+    

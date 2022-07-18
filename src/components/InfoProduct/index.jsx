@@ -1,91 +1,68 @@
 import React from "react";
 import "../InfoProduct/style.css";
 
-const InfoProduct = (props) => {
-  return (
-    <div class="container">
-      <div>
-        <a href="/ ">
-          <i class="fa-solid fa-arrow-left"></i>
-        </a>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-12 col-sm-6 col-md-6">
-          <form>
-            <div class="mb-3 mt-4">
-              <label for="produk" class="form-label">
-                <strong>Nama Produk</strong>
-              </label>
-              <input
-                type="text"
-                class="form-control"
-                id="produk"
-                placeholder="Nama Produk"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="harga" class="form-label">
-                <strong>Harga Produk</strong>
-              </label>
-              <input
-                type="number"
-                class="form-control"
-                id="harga"
-                placeholder="Rp 0,00"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="kategori" class="form-label">
-                <strong>Kategori</strong>
-              </label>
-              <select id="disabledSelect" class="form-select">
-                <option>Pilih Kategori</option>
-                <option value="#">Jam tangan analog</option>
-                <option value="#">Jam tangan digital</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <label for="deskripsi" class="form-label">
-                <strong>Deskripsi</strong>
-              </label>
-              <textarea
-                name="deskripsi"
-                id="desk"
-                cols="75"
-                rows="5"
-                style={{ borderRadius: 5 + "px" }}
-                placeholder="Contoh jalan perwira buana "
-              ></textarea>
-            </div>
-            <div class="mb-3">
-              <label for="foto-produk" class="form-label">
-                <strong>Foto Produk</strong>
-              </label>
-              <div class="cardd" style={{ width: "5rem" }}>
-                <div class="card-body ">
-                  &nbsp;&ensp;
-                  <a href="/ ">
-                    <i class="bi bi-plus-lg"></i>
-                  </a>
+const InfoProduct = () => {
+
+    return (
+        <>
+            <nav className="navbar navbar-expand-lg navbar-light fixed-top d-none d-sm-block" style={{ boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.15)" }}>
+                <div className="container">
+                    <a className="navbar-brand me-auto" id="logo" href="/">&nbsp;</a>
                 </div>
-              </div>
+            </nav>
+            <div className='container info-prd'>
+                <div className='row satu'>
+                    <div className='col-md-3' style={{ marginBottom: '2rem' }}>
+                        <a href=''><i className="bi bi-arrow-left offset-md-5" style={{ fontSize: '1.5rem', color: 'black' }}></i></a>
+                        <span className='title'><center style={{ marginTop: '-1.875rem' }}>Lengkapi Detail Product</center></span>
+                    </div>
+                    <form action='#' className='col-md-6'>
+                        <div className="col-md mb-3">
+                            <label htmlFor="nm_produk" className="form-label">Nama Produk</label>
+                            <input type="type" className="form-control" id="nm_produk" placeholder="Nama Produk" />
+                        </div>
+                        <div className="col-md mb-3">
+                            <label htmlFor="harga_produk" className="form-label">Harga Produk</label>
+                            <input type="type" className="form-control" id="harga_produk" placeholder="Rp 0,00" />
+                        </div>
+                        <div className="col-md mb-3">
+                            <label htmlFor="kategori" className="form-label">Kategori</label>
+                            <select class="form-control" id="kategori">
+                                <option>Pilih Kategori</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+                        <div className="col-md mb-3">
+                            <label htmlFor="deskripsi" className="form-label">Harga Produk</label>
+                            <textarea class="form-control" id="deskripsi" rows="3" placeholder='Contoh: Jalan Ikan Hiu 33'></textarea>
+                        </div>
+                        <div className="col-md mb-3">
+                            <div className='row'>
+                                <div className='col-md-3'>
+                                    <label htmlFor="foto" className="form-label">Foto Produk<br /><img src='/assets/img/Group_1.png' alt='' /><input id="foto" type={'file'} accept=".jpg,.png" hidden /></label>
+                                </div>
+                                <div className='col-md-3'>
+                                    {/* looping foto */}
+                                </div>
+                            </div>
+                        </div>
+                        <div className='row'>
+                            <div className="col-6 mb-3 d-grid">
+                                <a href='#' className="btn btn-outline-primary">Preview</a>
+                            </div>
+                            <div className="col-6 mb-3 d-grid">
+                                <button type="submit" className="btn btn-primary">Terbitkan</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="mb-3 ">
-              <button
-                type="submit "
-                class="btn4 btn-primary"
-                style={{ background: "#faf6fa", color: "black" }}
-              >
-                Preview
-              </button>
-              <button type="submit " class="btnnn btn-primary ">
-                Terbitkan
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  );
-};
+        </>
+
+    )
+}
+
 export default InfoProduct;

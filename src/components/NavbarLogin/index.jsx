@@ -1,50 +1,133 @@
 import React from "react";
-import "../NavbarLogin/style.css";
-import Rectangle127 from "../../assets/images/Rectangle 127.png";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-// import "../Navbar/sidenav.jsx";
+const NavbarLogin = () => {
 
-const NavbarLogin = (props) => {
-  return (
-    <nav className="navbar navbar-expand-lg bg-white ">
-      <div className="collapse navbar-collapse ms-lg-5" id="navbarNavAltMarkup">
-        <hr></hr>
-        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-          <li className="nav-item">
-            <a className="navbar-brand" href="#">
-              <img className="Rectangle127" src={Rectangle127} alt="logo" />
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div className="container pt-1 pb-1 space-even">
-        <button className="navbar-toggler" type="button">
-          <span className="open navbar-toggler-icon" onclick="openNav()"></span>
-        </button>
-        <form className="d-flex" role="search">
-          <div className="input-group rounded">
-            <input
-              className="form-control search-input"
-              type="search"
-              placeholder="Cari di sini..."
-              aria-label="Search"
-              for="form1"
-            />
-            <span className="input-group-text search-icon">
-              <i className="fas fa-search"></i>
-            </span>
-          </div>
-        </form>
-        <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <hr></hr>
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <a className="navbar-brand" href="#"></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  );
-};
+    const navigate = useNavigate();
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
+    const [setUser] = useState({});
+
+    const logout = () => {
+        localStorage.removeItem("token");
+
+        setIsLoggedIn(false);
+        setUser({});
+        navigate("/");
+    };
+
+    const infoprofil = () => {
+        navigate("/halamaninfoprofil");
+    }
+
+    return (
+        <>
+            <nav className="navbar navbar-expand-lg sticky-top">
+                <div className="container">
+                    <a className="navbar-brand" href="/">&nbsp;</a>
+                    <form class="search-bar d-flex">
+                        <input className="form-control cari-produk" type="search" placeholder="Cari di sini ..." aria-label="Search" />
+                    </form>
+                    {(() => {
+                        if (!isLoggedIn) {
+                            return (
+                                <form>
+                                    <Link to='/login' className='btn btn-primary' type='button'>Masuk</Link>
+                                </form>)
+                        }
+                        return (
+                            <div className="collapse navbar-collapse justify-content-end" id="navbarProductPage">
+                                <ul className="navbar-nav navbar-top">
+                                    <li className="nav-item">
+                                        <a className="nav-link nav-item-list active" aria-current="page" href="/">&nbsp;</a>
+                                    </li>
+                                    <li className='nav-item'>
+                                        <a className="nav-link nav-item-notification" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            &nbsp;
+                                        </a>
+                                        <ul className="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                            <li>
+                                                <a className="dropdown-item" href="#">
+                                                    <div className="card-notification">
+                                                        <div className="card-body-notification">
+                                                            <div className="row">
+                                                                <div className="col-md-2">
+                                                                    <img src="assets/images/image_seller.png" className="seller-image d-block" alt="Seller" />
+                                                                </div>
+                                                                <div className="col-md-10" style={{ paddingTop: 16, paddingBottom: 16, paddingLeft: 32 }}>
+                                                                    <div className="row">
+                                                                        <div className="col-md-8">
+                                                                            <p className="card-text-notification">Penawaran Produk</p>
+                                                                        </div>
+                                                                        <div className="col-md-4">
+                                                                            <p className="card-text-notification">20 Apr, 14:04</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <h5 className="card-title-product" style={{ marginBottom: 4 }}>Jam Tangan Casio</h5>
+                                                                    <h5 className="card-title-price-linethrough" style={{ marginBottom: 4 }}>Rp 250.000</h5>
+                                                                    <h5 className="card-title-bargain" style={{ marginBottom: 4 }}>Berhasil Ditawar Rp 200.000</h5>
+                                                                    <p className="card-text-notification">Kamu akan segera dihubungi penjual via whatsapp</p>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a className="dropdown-item" href="/">
+                                                    <div className="card-notification">
+                                                        <div className="card-body-notification">
+                                                            <div className="row">
+                                                                <div className="col-md-2">
+                                                                    <img src="assets/images/image_seller.png" className="seller-image d-block" alt="Seller" />
+                                                                </div>
+                                                                <div className="col-md-10" style={{ paddingTop: 16, paddingBottom: 16, paddingLeft: 32 }}>
+                                                                    <div className="row">
+                                                                        <div className="col-md-8">
+                                                                            <p className="card-text-notification">Penawaran Produk</p>
+                                                                        </div>
+                                                                        <div className="col-md-4">
+                                                                            <p className="card-text-notification">20 Apr, 14:04</p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <h5 className="card-title-product" style={{ marginBottom: 4 }}>Jam Tangan Casio</h5>
+                                                                    <h5 className="card-title-price-linethrough" style={{ marginBottom: 4 }}>Rp 250.000</h5>
+                                                                    <h5 className="card-title-bargain" style={{ marginBottom: 4 }}>Berhasil Ditawar Rp 200.000</h5>
+                                                                    <p className="card-text-notification">Kamu akan segera dihubungi penjual via whatsapp</p>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    {/* <li className="nav-item">
+                                        <a className="nav-link nav-item-user" href="/">&nbsp;</a>
+                                    </li> */}
+                                    <li className='nav-item'>
+                                        <a className="nav-link nav-item-user" href="/" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            &nbsp;
+                                        </a>
+                                        <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink" id="dropdown-profil">
+                                            <li className='nav-item'>
+                                                <p className="dropdown-item" onClick={infoprofil}>Profile</p>
+                                            </li>
+                                            <li className='nav-item'>
+                                                <p className="dropdown-item" onClick={logout}>Logout</p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>)
+                    })()}
+                </div>
+            </nav>
+        </>
+
+    )
+}
 export default NavbarLogin;
