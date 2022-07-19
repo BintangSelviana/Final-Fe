@@ -16,7 +16,7 @@ const InfoProduct = () => {
                         <a href=''><i className="bi bi-arrow-left offset-md-5" style={{ fontSize: '1.5rem', color: 'black' }}></i></a>
                         <span className='title'><center style={{ marginTop: '-1.875rem' }}>Lengkapi Detail Product</center></span>
                     </div>
-                    <form action='#' className='col-md-6'>
+                    <form action='#' className='col-md-6 mb-3'>
                         <div className="col-md mb-3">
                             <label htmlFor="nm_produk" className="form-label">Nama Produk</label>
                             <input type="type" className="form-control" id="nm_produk" placeholder="Nama Produk" />

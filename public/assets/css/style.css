@@ -6,12 +6,6 @@
 } */
 
 @media only screen and (min-width: 992px) {
-    .form{
-        font-family: 'Poppins';
-        margin-top:200px;
-        margin-left: 104px;
-        
-    }
 
     .form-control.cari-produk{
         display: flex;

@@ -1,12 +1,12 @@
 import React from "react";
 
-import NavbarProduct from "../../components/NavbarProduct";
+import NavbarLogin from "../../components/NavbarLogin";
 import DaftarJual from "../../components/DaftarJual";
 
 const HalamanDaftarJual = (props) => {
   return (
     <>
-      <NavbarProduct />
+      <NavbarLogin />
       <DaftarJual />
     </>
   );

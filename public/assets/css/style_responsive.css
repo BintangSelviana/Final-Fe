@@ -2,6 +2,9 @@
     .image-registration{
         display: none !important;
     }
+    #root .navbar{
+        display:none;
+    }
 
     .form{
         padding:16px 16px 16px 16px;

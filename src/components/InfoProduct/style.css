@@ -44,6 +44,21 @@ nav {
    border-color: #7227b5;
 }
 
+.info-prd .title {
+   display: none;
+ }
+ 
+ .info-bidder .title {
+   display: none;
+ }
+ 
+ .info-prd .satu {
+   margin-top: 5rem;
+ }
+ 
+ .info-bidder .satu {
+   margin-top: 5rem;
+ }
 .btn4 {
    border-radius: 10px;
    background: #7227b5;

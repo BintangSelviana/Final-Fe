@@ -1,145 +1,193 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import "../DaftarJual/style.css";
-import Rectangle32 from "../../assets/images/Rectangle 32.png";
-import image1 from "../../assets/images/image1.png";
-import image2 from "../../assets/images/image2.png";
-import { IoCubeOutline } from "react-icons/io5";
-import { IoChevronForwardSharp } from "react-icons/io5";
-import { IoHeartOutline } from "react-icons/io5";
-import { FiDollarSign } from "react-icons/fi";
-import { BsPlusLg } from "react-icons/bs";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { getAllProductByIdSeller } from "../redux/actions/productsActions";
+import "../../App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import AddProduct from "../../assets/images/addProduct.png";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Stack,
+  Table,
+  Card,
+} from "react-bootstrap";
+import Swal from "sweetalert2";
+import CurrencyFormat from "react-currency-format";
 
-const DaftarJual = (props) => {
-  return (
-    <div className="containerr-fluid py-2">
-      <div className="containerr">
-        <div>
-          <div className="Daftarjual py-3">
-            <h5>
-              <strong>Daftar Jual Saya</strong>
-            </h5>
-          </div>
-          <div className="card">
-            <div className="card-atas p-3">
-              <div>
-                <img className="Rectangle32" src={Rectangle32} alt=""></img>
-              </div>
-              <div className="card-textt">
-                <h6>
-                  <strong>Nama Penjual</strong>
-                </h6>
-                <h7>Kota</h7>
-              </div>
-              <button type="button" className="btn3">
-                <a href="/home" className="buttoni">
-                  Edit{" "}
-                </a>
-              </button>
+export default function DaftarJual() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const token = localStorage.getItem("token");
+  const { product } = useSelector((state) => state.product);
+  const { user } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (token === null) {
+      return navigate("/halamandaftarjual");
+    }
+    dispatch(getAllProductByIdSeller());
+  }, [dispatch, navigate, token]);
+
+  const handleFilterDiminati = () => {
+    return navigate("/halamandaftarDiminati");
+  };
+  const handleFilterSemua = () => {
+    return navigate("/halamandaftarjual");
+  };
+  const handleFilterTerjual = () => {
+    return navigate("/halamandaftarterjual");
+  };
+  return { product } ? (
+    <>
+      <Container>
+        <Row className="justify-content-md-center mt-5 mb-3">
+          <Col>
+            <h4 className="fw-bold">Daftar Jual Saya</h4>
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <Stack direction="horizontal" gap={3} className="infoPenjual">
+              {user === null ? (
+                <></>
+              ) : (
+                <>
+                  <img
+                    src={user.photo_profile}
+                    alt=""
+                    className="image-profile"
+                  />
+                  <div>
+                    <h5 className="my-auto">{user.name}</h5>
+                    <p className="my-auto">{user.city}</p>
+                  </div>
+                </>
+              )}
+              <Button
+                type="button"
+                className="btn-block btnOutlineSmall me-2 ms-auto"
+                onClick={() => navigate("/halamaninfoprofil")}
+              >
+                Edit
+              </Button>
+            </Stack>
+          </Col>
+        </Row>
+        <Row>
+          <Col lg={3} md={12} xs={12}>
+            <div className="boxShadow mt-4">
+              <h5>Kategori</h5>
+              <Table style={{ color: "grey" }}>
+                <thead>
+                  <tr
+                    style={{ height: "50px" }}
+                    className="kategoriActive"
+                    id="filterAll"
+                    onClick={handleFilterSemua}
+                  >
+                    <td>
+                      <i className="bi bi-box me-2"></i>Semua Produk
+                      <i className="bi bi-chevron-right float-end"></i>
+                    </td>
+                  </tr>
+                  <tr
+                    style={{ height: "50px" }}
+                    className="kategoriInActive"
+                    id="filterDiminati"
+                    onClick={handleFilterDiminati}
+                  >
+                    <td>
+                      <i className="bi bi-heart me-2"></i>Diminati
+                      <i className="bi bi-chevron-right float-end"></i>
+                    </td>
+                  </tr>
+                  <tr
+                    style={{ height: "50px" }}
+                    className="kategoriInActive"
+                    id="filterTerjual"
+                    onClick={handleFilterTerjual}
+                  >
+                    <td>
+                      <i className="bi bi-currency-dollar me-2"></i>Terjual
+                      <i className="bi bi-chevron-right float-end"></i>
+                    </td>
+                  </tr>
+                </thead>
+              </Table>
             </div>
-          </div>
-          <div className="col-11 bordered py-3">
-            <div className="row">
-              <div className="col-lg-3">
-                <div className="card">
-                  <div className="kategorii">
-                    <div className="kategori1 d-flex justify-content-between">
-                      <strong>Kategori</strong>
-                    </div>
-                    <div className="list1 list-group-flush justify-content-between">
-                      <a className="list-group-item" href="/">
-                        <IoCubeOutline />
-                        &nbsp; Semua Produk &ensp;
-                        <IoChevronForwardSharp />
-                      </a>
-                      <a className="list-group-item" href="/">
-                        <IoHeartOutline />
-                        &nbsp; Diminati
-                        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
-                        <IoChevronForwardSharp />
-                      </a>
-                      <a className="list-group-item" href="/">
-                        <FiDollarSign />
-                        &nbsp; Terjual
-                        &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&nbsp;
-                        <IoChevronForwardSharp />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-9">
-                <div class="row">
-                  <div class="col-6 col-md-4 col-lg-4 mb-3">
-                    <div className="card">
-                      <div className="card-satu">
-                        <a href="/">
-                          <p className="card-text">
-                            <BsPlusLg />
-                          </p>
-                        </a>
-                        <p>Tambah Produk</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg-4 mb-3 ">
-                    <div className="card">
-                      <img className="image1" src={image1} alt=""></img>
-                      <div className="card-body">
-                        <h5 className="card-title">Jam Tangan Casio</h5>
-                        <p className="card-text">Aksesoris</p>
-                        <a>Rp.250.000</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg-4 mb-3">
-                    <div className="card">
-                      <img className="image2" src={image2} alt=""></img>
-                      <div className="card-body">
-                        <h5 className="card-title">Jam Tangan Casio</h5>
-                        <p className="card-text">Aksesoris</p>
-                        <a>Rp.250.000</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg-4 mb-3">
-                    <div className="card">
-                      <img className="image2" src={image2} alt=""></img>
-                      <div className="card-body">
-                        <h5 className="card-title">Jam Tangan Casio</h5>
-                        <p className="card-text">Aksesoris</p>
-                        <a>Rp.250.000</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-6 col-md-4 col-lg-4 mb-3">
-                    <div className="card">
-                      <img className="image1" src={image1} alt=""></img>
-                      <div className="card-body">
-                        <h5 className="card-title">Jam Tangan Casio</h5>
-                        <p className="card-text">Aksesoris</p>
-                        <a>Rp.250.000</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-6 col-md-4 col-lg-4 mb-3">
-                    <div className="card">
-                      <img className="image2" src={image2} alt=""></img>
-                      <div className="card-body">
-                        <h5 className="card-title">Jam Tangan Casio</h5>
-                        <p className="card-text">Aksesoris</p>
-                        <a>Rp.250.000</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+          </Col>
+          <Col lg={9} md={12} xs={12}>
+            <Row className="mt-4">
+              <Col lg={4} md={4} xs={6} className="mb-4">
+                <Link to="/halamaninfo">
+                  <img src={AddProduct} className="imgBtnAdd" alt="" />
+                </Link>
+              </Col>
+              {product.length === 0 || product.length === undefined ? (
+                <></>
+              ) : (
+                product.map((product) => (
+                  <Col key={product.id} lg={4} md={4} xs={6} className="mb-4">
+                    <Link
+                      to={`/halamanproduct/${product.id}`}
+                      className="text-decoration-none"
+                    >
+                      <Card>
+                        <Card.Img
+                          variant="top"
+                          src={product.image_1}
+                          className="imgProductLarge"
+                        />
+                        <Card.Body>
+                          <Card.Title
+                            className="textInfo"
+                            style={{ fontSize: "14px", height: "10px" }}
+                          >
+                            {product.product_name}
+                          </Card.Title>
+                          <Card.Text
+                            className="textInfo"
+                            style={{ fontSize: "10px", height: "5px" }}
+                          >
+                            {product.category}
+                          </Card.Text>
+                          <Card.Text
+                            className="textInfo"
+                            style={{ fontSize: "14px", height: "12px" }}
+                          >
+                            <CurrencyFormat
+                              value={product.price}
+                              displayType={"text"}
+                              thousandSeparator={"."}
+                              decimalSeparator={","}
+                              prefix={"Rp. "}
+                            />
+                          </Card.Text>
+                        </Card.Body>
+                      </Card>
+                    </Link>
+                  </Col>
+                ))
+              )}
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  ) : (
+    <>
+      {Swal.fire({
+        title: "Loading",
+        text: "Mohon tunggu sebentar",
+        allowOutsideClick: false,
+        allowEscapeKey: false,
+        allowEnterKey: false,
+        showConfirmButton: false,
+        showCancelButton: false,
+      })}
+    </>
   );
-};
-
-export default DaftarJual;
+}

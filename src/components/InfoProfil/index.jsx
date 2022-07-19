@@ -1,4 +1,5 @@
-import '../InfoProfil/style.css';
+import React from "react";
+import "../InfoProfil/style.css";
 
 const InfoProfil = () => {
     return (
@@ -15,11 +16,10 @@ const InfoProfil = () => {
             {/*Info*/}
             <div className='container'>
                 <div className='row satu'>
-                    <div className='col-md-3' >
+                    <div className='col-md-3' style={{ marginBottom: '5rem' }}>
                         <a href=''><i className="bi bi-arrow-left offset-md-5" style={{ fontSize: '1.5rem', color: 'black' }}></i></a>
-                        <span className='title'><center style={{ marginTop: '-1.875rem' }}>Lengkapi Info Akun</center></span>
                     </div>
-                    <form action='#' className='col-md-6'>
+                    <form action='#' className='col-md-6 mb-3'>
                         <div className="col-md mb-3">
                             <center><label><img src='/assets/img/Group_2.png' alt='' /><input id="foto_profil" type={'file'} accept=".jpg,.png" hidden /></label></center>
                         </div>
